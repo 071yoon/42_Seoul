@@ -6,7 +6,7 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:48:14 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/10 17:00:07 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/10 17:27:58 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ typedef struct s_list
 
 int		ft_atoi(char *str);
 void	ft_bzero(void *s, size_t n);
-int		ft_isalnum(char c);
-int		ft_isalpha(char c);
-int		ft_isascii(char c);
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
 int		ft_isdigit(int c);
-int		ft_isprint(char c);
+int		ft_isprint(int c);
 void	*ft_memchr(void *s, int c, size_t n);
 int		ft_memcmp(void *s1, void *s2, size_t n);
 void	*ft_memcpy(void *dest, void *src, size_t n);
@@ -40,7 +40,7 @@ size_t	ft_strlen(char *str);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 char	*ft_strnstr(char *haystack, char *needle, size_t len);
 char	*ft_strrchr(char *str, int c);
-int		ft_tolower(char c);
-int		to_upper(char c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
 #endif

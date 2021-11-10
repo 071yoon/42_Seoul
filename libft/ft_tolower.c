@@ -6,14 +6,14 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:22:04 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/10 11:23:51 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/10 17:25:35 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(char c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
+		return (c + 'a' - 'A');
 	else
-		return (0);
+		return (c);
 }

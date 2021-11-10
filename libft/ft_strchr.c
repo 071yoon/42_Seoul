@@ -6,18 +6,23 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:22:00 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/10 14:50:09 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/10 18:00:19 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(char *str, int c)
 {
-	while (*str != '\0')
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (*str == c)
-			return (str);
+		if (str[i] == c)
+			return (&str[i]);
 		else
-			str++;
+			i++;
 	}
+	if (str[i] == c)
+		return (&str[i]);
 	return (0);
 }
