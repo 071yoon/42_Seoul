@@ -6,7 +6,7 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:48:14 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/10 16:57:54 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/10 17:00:07 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	*ft_memmove(void *dest, void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
 char	*ft_strchr(char *str, int c);
 size_t	ft_strlcat(char *dest, char *src, size_t size);
-size_t	strlcpy(char *dest, char *src, size_t destsize);
+size_t	ft_strlcpy(char *dest, char *src, size_t destsize);
 size_t	ft_strlen(char *str);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 char	*ft_strnstr(char *haystack, char *needle, size_t len);
