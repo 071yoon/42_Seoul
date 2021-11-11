@@ -6,13 +6,13 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:04:09 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/10 17:20:13 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/11 20:55:00 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*ptr_s;
 	int				i;

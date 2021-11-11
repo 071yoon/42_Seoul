@@ -18,7 +18,9 @@ FILES		=	ft_strlen \
 				ft_memcpy \
 				ft_memchr \
 				ft_memmove \
-				ft_memcmp
+				ft_memcmp \
+				ft_calloc \
+				ft_strdup
 
 DIR_OBJS	= ./
 OBJS		= $(addprefix $(DIR_OBJS), $(addsuffix .o, $(FILES)))

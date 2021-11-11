@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 12:40:45 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/11 21:33:09 by 071yoon          ###   ########.fr       */
+/*   Created: 2021/11/10 20:36:56 by 071yoon           #+#    #+#             */
+/*   Updated: 2021/11/11 21:36:18 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *str, int c)
-{
-	int	len;
+#include "libft.h"
 
-	len = 0;
-	while (*str != '\0')
+char	*ft_strdup(const char *s1)
+{
+	int		len_s1;
+	char	*ret;
+	int		i;
+
+	len_s1 = ft_strlen(s1);
+	ret = malloc(sizeof(char) * (len_s1 + 1));
+	if (!ret)
+		return (NULL);
+	i = 0;
+	while (i < len_s1)
 	{
-		str++;
-		len++;
+		ret[i] = s1[i];
+		i++;
 	}
-	while (len >= 0)
-	{
-		if (*str == c)
-			return (str);
-		else
-		{
-			str--;
-			len--;
-		}
-	}
-	return (0);
+	ret[i] = '\0';
+	return (ret);
 }

@@ -6,11 +6,11 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:22:00 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/10 18:00:19 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/11 21:32:52 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	int	i;
 

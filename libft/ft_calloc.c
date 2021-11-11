@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 12:40:45 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/11 21:33:09 by 071yoon          ###   ########.fr       */
+/*   Created: 2021/11/10 20:28:22 by 071yoon           #+#    #+#             */
+/*   Updated: 2021/11/10 20:42:31 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *str, int c)
-{
-	int	len;
+#include "libft.h"
 
-	len = 0;
-	while (*str != '\0')
-	{
-		str++;
-		len++;
-	}
-	while (len >= 0)
-	{
-		if (*str == c)
-			return (str);
-		else
-		{
-			str--;
-			len--;
-		}
-	}
-	return (0);
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ret;
+
+	ret = malloc(sizeof(char) * count * size);
+	if (!ret)
+		return (NULL);
+	ft_bzero(ret, count * size);
+	return (ret);
 }
