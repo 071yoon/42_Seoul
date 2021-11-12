@@ -6,13 +6,13 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:28:15 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/10 17:00:13 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/12 16:05:03 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, char *src, size_t destsize)
+size_t	ft_strlcpy(char *restrict dest, char *restrict src, size_t destsize)
 {
 	size_t	i;
 	size_t	len;

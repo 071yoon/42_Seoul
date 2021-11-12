@@ -6,23 +6,23 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:22:00 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/11 21:32:52 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/12 15:51:54 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *str, int c)
 {
-	int	i;
+	char	*pointer;
 
-	i = 0;
-	while (str[i] != '\0')
+	pointer = (char *)str;
+	while (*pointer)
 	{
-		if (str[i] == c)
-			return (&str[i]);
+		if (*pointer == c)
+			return (pointer);
 		else
-			i++;
+			pointer++;
 	}
-	if (str[i] == c)
-		return (&str[i]);
+	if (*pointer == c)
+		return (pointer);
 	return (0);
 }

@@ -6,27 +6,29 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:40:45 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/11 21:33:09 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/12 15:54:29 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int	len;
+	int		len;
+	char	*pointer;
 
+	pointer = (char *)str;
 	len = 0;
-	while (*str != '\0')
+	while (*pointer != '\0')
 	{
-		str++;
+		pointer++;
 		len++;
 	}
 	while (len >= 0)
 	{
-		if (*str == c)
-			return (str);
+		if (*pointer == c)
+			return (pointer);
 		else
 		{
-			str--;
+			pointer--;
 			len--;
 		}
 	}
