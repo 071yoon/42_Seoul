@@ -6,7 +6,7 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:48:14 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/12 16:08:18 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/12 16:12:40 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ char	*ft_strchr(const char *str, int c);
 size_t	ft_strlcat(char *restrict dest, char *restrict src, size_t size);
 size_t	ft_strlcpy(char *restrict dest, char *restrict src, size_t destsize);
 size_t	ft_strlen(const char *str);
-int		ft_strncmp(char *s1, char *s2, size_t n);
-char	*ft_strnstr(char *haystack, char *needle, size_t len);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *str, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
