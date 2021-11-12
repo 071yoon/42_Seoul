@@ -20,7 +20,10 @@ FILES		=	ft_strlen \
 				ft_memmove \
 				ft_memcmp \
 				ft_calloc \
-				ft_strdup
+				ft_strdup \
+				ft_substr \
+				ft_strjoin \
+				ft_strtrim
 
 DIR_OBJS	= ./
 OBJS		= $(addprefix $(DIR_OBJS), $(addsuffix .o, $(FILES)))

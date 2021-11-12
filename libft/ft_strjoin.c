@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 15:32:15 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/12 16:39:44 by 071yoon          ###   ########.fr       */
+/*   Created: 2021/11/12 16:33:40 by 071yoon           #+#    #+#             */
+/*   Updated: 2021/11/12 16:43:25 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*pointer;
-	size_t	i;
+	char	*ret;
+	size_t	len_s1;
+	size_t	len_s2;
 
-	if ((size_t)ft_strlen((char *)s) < start)
+	len_s1 = ft_strlen((char *)s1);
+	len_s2 = ft_strlen((char *)s2);
+	if (!s1 || !s2)
 		return (NULL);
-	pointer = malloc(sizeof(char) * (len + 1));
-	if (pointer == NULL)
+	ret = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
+	if (ret == NULL)
 		return (NULL);
-	i = 0;
-	while (i < len && s[start] != '\0')
-		pointer[i++] = s[start++];
-	pointer[i] = '\0';
-	return (pointer);
+	ft_strlcat(ret, (char *)s1, len_s1 + 1);
+	ft_strlcat(ret, (char *)s2, len_s1 + len_s2 + 1);
+	return (ret);
 }
