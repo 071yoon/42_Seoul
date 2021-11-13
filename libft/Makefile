@@ -23,7 +23,8 @@ FILES		=	ft_strlen \
 				ft_strdup \
 				ft_substr \
 				ft_strjoin \
-				ft_strtrim
+				ft_strtrim \
+				ft_split
 
 DIR_OBJS	= ./
 OBJS		= $(addprefix $(DIR_OBJS), $(addsuffix .o, $(FILES)))

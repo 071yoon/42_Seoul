@@ -6,7 +6,7 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:48:14 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/12 16:45:29 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/13 14:47:58 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
 
 #endif
