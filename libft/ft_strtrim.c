@@ -6,7 +6,7 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:45:36 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/12 18:35:06 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/13 16:13:24 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (first_ptr >= last_ptr)
 		return (ft_strdup(""));
 	trimmed_s1 = malloc(sizeof(char) * (last_ptr - first_ptr + 2));
-	if (trimmed_s1 == NULL)
+	if (!trimmed_s1)
 		return (NULL);
 	ft_strlcpy(trimmed_s1, first_ptr, (last_ptr - first_ptr + 2));
 	return (trimmed_s1);
