@@ -6,7 +6,7 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:45:36 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/13 16:13:24 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/13 17:18:25 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static char	*last_save(char const *s1, char const *set)
 
 	last = (char *)s1;
 	i = ft_strlen((char *)s1);
-	while (--i >= 0)
+	while (--i >= 0 && &last[i] > s1)
 	{
 		j = -1;
 		while (++j < ft_strlen((char *)set))
@@ -65,8 +65,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	first_ptr = first_save(s1, set);
 	last_ptr = last_save(s1, set);
 	if (first_ptr >= last_ptr)
-		return (ft_strdup(""));
-	trimmed_s1 = malloc(sizeof(char) * (last_ptr - first_ptr + 2));
+		return ("\0");
+	trimmed_s1 = (char *)malloc(sizeof(char) * (last_ptr - first_ptr + 2));
 	if (!trimmed_s1)
 		return (NULL);
 	ft_strlcpy(trimmed_s1, first_ptr, (last_ptr - first_ptr + 2));
