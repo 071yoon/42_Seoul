@@ -6,7 +6,7 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:45:36 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/13 17:18:25 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/14 15:07:46 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*first_ptr;
 	char	*last_ptr;
 
+	if (s1 == 0 || set == 0)
+		return (NULL);
 	first_ptr = first_save(s1, set);
 	last_ptr = last_save(s1, set);
 	if (first_ptr >= last_ptr)

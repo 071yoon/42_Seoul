@@ -6,7 +6,7 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:33:40 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/13 16:59:02 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/14 15:07:16 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len_s1;
 	size_t	len_s2;
 
-	len_s1 = ft_strlen((char *)s1);
-	len_s2 = ft_strlen((char *)s2);
 	if (!s1 || !s2)
 		return (NULL);
+	len_s1 = ft_strlen((char *)s1);
+	len_s2 = ft_strlen((char *)s2);
 	ret = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
 	if (!ret)
 		return (NULL);

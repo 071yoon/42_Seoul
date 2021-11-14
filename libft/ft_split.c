@@ -6,7 +6,7 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 18:38:00 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/13 14:47:08 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/14 14:58:23 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,17 @@ static size_t	wd_cnt(char const *s, char c)
 	size_t	i;
 
 	i = 0;
-	cnt = 1;
-	while (s[i] == c)
-		i++;
-	if (s[i] == '\0')
-		return (0);
-	while (s[i + 1] != '\0')
+	cnt = 0;
+	while (s[i] != '\0')
 	{
-		if (s[i] == c && s[i] != s[i + 1])
+		if (s[i] == c)
+			i++;
+		else
+		{
 			cnt++;
-		i++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
 	}
 	return (cnt);
 }
@@ -73,6 +74,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (s == 0)
+		return (NULL);
 	wd_num = wd_cnt(s, c);
 	ret = malloc(sizeof(char *) * (wd_cnt(s, c) + 1));
 	if (!ret)
