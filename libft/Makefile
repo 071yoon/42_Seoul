@@ -31,7 +31,15 @@ FILES		=	ft_strlen \
 				ft_putchar_fd \
 				ft_putstr_fd \
 				ft_putendl_fd \
-				ft_putnbr_fd
+				ft_putnbr_fd \
+				ft_lstadd_back \
+				ft_lstadd_front \
+				ft_lstclear \
+				ft_lstdelone \
+				ft_lstlast \
+				ft_lstnew \
+				ft_lstsize \
+				ft_lstiter \
 
 DIR_OBJS	= ./
 OBJS		= $(addprefix $(DIR_OBJS), $(addsuffix .o, $(FILES)))
