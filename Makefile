@@ -40,6 +40,7 @@ FILES		=	ft_strlen \
 				ft_lstnew \
 				ft_lstsize \
 				ft_lstiter \
+				ft_lstmap
 
 DIR_OBJS	= ./
 OBJS		= $(addprefix $(DIR_OBJS), $(addsuffix .o, $(FILES)))
