@@ -6,7 +6,7 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 18:38:00 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/14 14:58:23 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/17 14:24:48 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,13 @@ static size_t	let_put(char const *s, char c, size_t now, char *ret)
 	return (now);
 }
 
+void	free_all(char **ret, size_t j)
+{
+	while (ret[j] != NULL)
+		free(ret[j++]);
+	free(ret);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	wd_num;
@@ -84,7 +91,10 @@ char	**ft_split(char const *s, char c)
 	{
 		ret[j] = malloc(sizeof(char) * (let_cnt(s, c, i) + 1));
 		if (!ret[j])
-			return (NULL);
+		{
+			free_all(ret, j);
+			return (ret);
+		}
 		i = let_put(s, c, i, ret[j++]);
 	}
 	ret[wd_cnt(s, c)] = NULL;
