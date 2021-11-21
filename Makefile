@@ -31,8 +31,9 @@ FILES		=	ft_strlen \
 				ft_putchar_fd \
 				ft_putstr_fd \
 				ft_putendl_fd \
-				ft_putnbr_fd \
-				ft_lstadd_back \
+				ft_putnbr_fd
+
+FILES_BOUNS	=	ft_lstadd_back \
 				ft_lstadd_front \
 				ft_lstclear \
 				ft_lstdelone \
@@ -44,8 +45,10 @@ FILES		=	ft_strlen \
 
 DIR_OBJS	= ./
 OBJS		= $(addprefix $(DIR_OBJS), $(addsuffix .o, $(FILES)))
+OBJS_BOUNS	= $(addprefix $(DIR_OBJS), $(addsuffix .o, $(FILES_BONUS)))
 DIR_SRCS	= ./
 SRCS		= $(addprefix $(DIR_SRCS), $(addsuffix .c, $(FILES)))
+SRCS_BOUNS	= $(addprefix $(DIR_SRCS), $(addsuffix .c, $(FILES_BONUS)))
 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
@@ -55,7 +58,7 @@ RM			= rm -f
 
 NAME		= libft.a
 
-.c.o:		$(SRCS)
+.c.o:		$(SRCS) $(SRCS_BONUS)
 			$(CC) $(CFLAGS) -c -o $@ $<
 
 all:		$(NAME)
@@ -63,9 +66,11 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
+bonus:		$(OBJS_BONUS)
+			$(AR) $(NAME) $(OBJS_BONUS)
 
 clean: 
-			$(RM) $(OBJS)
+			$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: 	clean
 			$(RM) $(NAME)

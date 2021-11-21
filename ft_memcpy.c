@@ -6,13 +6,13 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 13:32:34 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/11 21:01:13 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/21 13:46:43 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dest, void *restrict src, size_t n)
+void	*ft_memcpy(void *dest, void *src, size_t n)
 {
 	unsigned char	*ptr_dest;
 	unsigned char	*ptr_src;
