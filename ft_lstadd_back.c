@@ -6,7 +6,7 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 16:57:16 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/11/14 17:32:11 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/11/21 17:14:59 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	curr = *lst;
-	while (curr -> next)
-	{
-		curr = curr -> next;
-	}
-	curr -> next = new;
+	while (curr->next)
+		curr = curr->next;
+	curr->next = new;
 }

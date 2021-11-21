@@ -33,7 +33,7 @@ FILES		=	ft_strlen \
 				ft_putendl_fd \
 				ft_putnbr_fd
 
-FILES_BOUNS	=	ft_lstadd_back \
+FILES_BONUS	=	ft_lstadd_back \
 				ft_lstadd_front \
 				ft_lstclear \
 				ft_lstdelone \
@@ -45,10 +45,10 @@ FILES_BOUNS	=	ft_lstadd_back \
 
 DIR_OBJS	= ./
 OBJS		= $(addprefix $(DIR_OBJS), $(addsuffix .o, $(FILES)))
-OBJS_BOUNS	= $(addprefix $(DIR_OBJS), $(addsuffix .o, $(FILES_BONUS)))
+OBJS_BONUS	= $(addprefix $(DIR_OBJS), $(addsuffix .o, $(FILES_BONUS)))
 DIR_SRCS	= ./
 SRCS		= $(addprefix $(DIR_SRCS), $(addsuffix .c, $(FILES)))
-SRCS_BOUNS	= $(addprefix $(DIR_SRCS), $(addsuffix .c, $(FILES_BONUS)))
+SRCS_BONUS	= $(addprefix $(DIR_SRCS), $(addsuffix .c, $(FILES_BONUS)))
 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
