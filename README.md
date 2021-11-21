@@ -10,49 +10,7 @@ notion으로 실행 시 더 보기 수월하다
     
     alphabet 순서로 정렬하였으며 함수 원형과 간단한 설명이 포함되어있다.
     
-    - 참고자료
-        - unsigned int 와 size_t의 차이
-            
-            **size_t**는 a.k.a. '**long unsigned int'(별칭)**로서 '이론상 **가장 큰 사이즈**를 담을 수 있는 **unsigned 데이터 타입**'으로 정의된다.
-            
-            현재 대부분의 x86 컴퓨터는 32비트 또는 64비트 운영체제를 사용하고 있다. 요즘은 ARM에서도 64비트를 사용 중이다. c언어의 변수의 크기는 구동 환경에 따라 다르다. 보편적인 경우에 int형의 크기는 4바이트 (32비트)라고 알 것이다. 이는 32비트의 환경에서만 적용된다.
-            
-            **즉, 대부분의 변수는 동작 환경에 따라 크기가 달라진다.**
-            
-            하지만 size_t 의 경우에는 다르다. 보통 헤더 파일에 정의가 되어 있는데, size_t는 4바이트의 크기를 가지고 있다 (32비트 unsigned int). 이것은 환경이 바뀌어도 **항상 4바이트로 고정이 되어 있다.**
-            
-            그래서 어디서든 4바이트의 크기(unsigned int)를 가지는 변수를 선언하고 싶을 때는 size_t로 선언하면 된다. 이와 비슷하게 ssize_t 라는 변수도 있는데, 이것은 signed int 형태를 가진다.
-            
-            즉 더 안전하게 사용할 때 size_t 를 쓰시면 되겠다.
-            
-            참고 링크 : [참고](https://tre2man.tistory.com/236)
-            
-        - pointer 연산 시 unsigned_char 를 사용하는 이유
-            
-            GCC에서는 void포인터를 char, unsigned char 크기만큼 연산합니다 → 1 byte 씩
-            
-            포인터는 주솟값 연산이니까 부호를 쓰지 않습니다.
-            
-            char를 쓰지 않고 unsigned char를 쓰는 것이 관례입니다.
-            
-            참고 : [참고](https://dojang.io/mod/page/view.php?id=790)
-            
-        - restrict란
-            
-            restrict 포인터는 메모리 접근에 관련된 최적화 기능입니다.
-            
-            restrict 포인터는 각 포인터가 서로 다른 메모리 공간을 가리키고 있고, 다른 곳에서 접근하지 않으니 컴파일러가 최적화를 하라는 뜻입니다.
-            
-            만약 같은 메모리 공간을 가리키는 포인터에 restrict를 붙여서 컴파일하게 되면 최적화 때문에 잘못된 결과가 나올 수 있으니 주의해야 합니다. 따라서 포인터가 가리키는 메모리 공간을 프로그래머가 직접 확인한 뒤 다른 공간을 가리킬 때만 restrict를 사용해야 합니다.
-            
-            참고 : [참고](https://dojang.io/mod/page/view.php?id=760)
-            
-        - memcpy 와 memmove의 차이
-            - memcpy는 restrict가 붙어있고 memmove는 restrict가 없습니다. 여기서 memmove는 내부적으로 같은 메모리 공간을 가리키는지, 메모리가 겹치는지 모두 확인을 하기 때문에 성능이 떨어집니다. 만약 두 메모리 공간이 다른 공간을 가리키고 겹치지 않는다면 최적화된 memcpy를 사용하여 성능을 향상시킬 수 있습니다.
-            - memcpy는 메모리의 내용을 직접 copy하고, memmove는 메모리의 내용을 임시저장소에 저장한 후 복사한다. 따라서 memcpy의 속도는 memmove보다 빠르지만 안정성면에서 떨어진다. memory를 복사할 때 memcpy의 경우에는 자기 자신의 내용을 복사하여 덮어쓸 때, 인접한 메모리에 의해 겹침현상(overlap)이 일어난다.
-                
-                [참고](https://blog.naver.com/PostView.nhn?isHttpsRedirect=true&blogId=sharonichoya&logNo=220510332768#:~:text=memcpy%EB%8A%94%20%EB%A9%94%EB%AA%A8%EB%A6%AC%EC%9D%98%20%EB%82%B4%EC%9A%A9,%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94%20%EA%B2%83%EC%9D%84%20%EC%9D%98%EB%AF%B8%ED%95%9C%EB%8B%A4.) 
-                
+    
     - ft_atoi
         - man page
             
