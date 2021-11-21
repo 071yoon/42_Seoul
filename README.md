@@ -1,5 +1,7 @@
 notion으로 실행 시 더 보기 수월하다
-ttps://www.notion.so/Libft-78424b63f7474eb1a3eca83170f11e48
+
+[링크](https://www.notion.so/Libft-78424b63f7474eb1a3eca83170f11e48)
+
 - Libc functions
     
     alphabet 순서로 정렬하였으며 함수 원형과 간단한 설명이 포함되어있다.
@@ -19,7 +21,7 @@ ttps://www.notion.so/Libft-78424b63f7474eb1a3eca83170f11e48
             
             즉 더 안전하게 사용할 때 size_t 를 쓰시면 되겠다.
             
-            참고 링크 : [https://tre2man.tistory.com/236](https://tre2man.tistory.com/236)
+            참고 링크 : [참고](https://tre2man.tistory.com/236)
             
         - pointer 연산 시 unsigned_char 를 사용하는 이유
             
@@ -29,7 +31,7 @@ ttps://www.notion.so/Libft-78424b63f7474eb1a3eca83170f11e48
             
             char를 쓰지 않고 unsigned char를 쓰는 것이 관례입니다.
             
-            참고 : [https://dojang.io/mod/page/view.php?id=790](https://dojang.io/mod/page/view.php?id=790)
+            참고 : [참고](https://dojang.io/mod/page/view.php?id=790)
             
         - restrict란
             
@@ -39,7 +41,7 @@ ttps://www.notion.so/Libft-78424b63f7474eb1a3eca83170f11e48
             
             만약 같은 메모리 공간을 가리키는 포인터에 restrict를 붙여서 컴파일하게 되면 최적화 때문에 잘못된 결과가 나올 수 있으니 주의해야 합니다. 따라서 포인터가 가리키는 메모리 공간을 프로그래머가 직접 확인한 뒤 다른 공간을 가리킬 때만 restrict를 사용해야 합니다.
             
-            참고 : [https://dojang.io/mod/page/view.php?id=760](https://dojang.io/mod/page/view.php?id=760)
+            참고 : [참고](https://dojang.io/mod/page/view.php?id=760)
             
         - memcpy 와 memmove의 차이
             - memcpy는 restrict가 붙어있고 memmove는 restrict가 없습니다. 여기서 memmove는 내부적으로 같은 메모리 공간을 가리키는지, 메모리가 겹치는지 모두 확인을 하기 때문에 성능이 떨어집니다. 만약 두 메모리 공간이 다른 공간을 가리키고 겹치지 않는다면 최적화된 memcpy를 사용하여 성능을 향상시킬 수 있습니다.
