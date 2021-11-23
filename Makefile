@@ -1,3 +1,5 @@
+NAME		= libft.a
+
 FILES		=	ft_strlen \
 				ft_strlcpy \
 				ft_strlcat \
@@ -55,8 +57,6 @@ CFLAGS		= -Wall -Wextra -Werror
 
 AR			= ar crs
 RM			= rm -f
-
-NAME		= libft.a
 
 .c.o:		$(SRCS) $(SRCS_BONUS)
 			$(CC) $(CFLAGS) -c -o $@ $<
