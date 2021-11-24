@@ -12,27 +12,28 @@
 
 #include "get_next_line.h"
 
-static char	*function_name(int fd, char *buf, char *backup)
+static char	*read_line(int fd, char *buf, char *backup)
 {
-	int		read_line;
-	char	*char_temp;
+	int		cnt;
+	char	*tmp;
 
-	read_line = 1;
-	while (read_line != '\0')
+	cnt = 1;
+	while (cnt)
 	{
-		read_line = read(fd, buf, BUFFER_SIZE);
-		if (read_line == -1)
+		cnt = read(fd, buf, BUFFER_SIZE);
+		if (cnt == -1)
 			return (0);
-		else if (read_line == 0)
+		else if (cnt == 0)
 			break ;
-		buf[read_line] = '\0';
+		buf[cnt] = '\0';
 		if (!backup)
 			backup = ft_strdup("");
-		char_temp = backup;
-		backup = ft_strjoin(char_temp, buf);
-		free(char_temp);
-		char_temp = NULL;
-		if (ft_strchr (buf, '\n'))
+		tmp = backup;
+		backup = ft_strjoin(tmp, buf);
+		if (!backup)
+			return (NULL);
+		free(tmp);
+		if (ft_strchr(buf, '\n'))
 			break ;
 	}
 	return (backup);
@@ -40,22 +41,24 @@ static char	*function_name(int fd, char *buf, char *backup)
 
 static char	*extract(char *line)
 {
-	size_t	count;
-	char	*backup;
+	int		i;
+	char	*ret;
 
-	count = 0;
-	while (line[count] != '\n' && line[count] != '\0')
-		count++;
-	if (line[count] == '\0' || line[1] == '\0')
+	i = 0;
+	while (line[i] != '\n' && line[i] != '\0')
+		i++;
+	if (line[i] == '\0')
 		return (0);
-	backup = ft_substr(line, count + 1, ft_strlen(line) - count);
-	if (*backup == '\0')
+	ret = ft_substr(line, i + 1, ft_strlen(line) - i);
+	if (!ret)
+		return (NULL);
+	if (ret[0] == '\0')
 	{
-		free(backup);
-		backup = NULL;
+		free(ret);
+		return (NULL);
 	}
-	line[count + 1] = '\0';
-	return (backup);
+	line[i + 1] = '\0';
+	return (ret);
 }
 
 char	*get_next_line(int fd)
@@ -69,9 +72,8 @@ char	*get_next_line(int fd)
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
 		return (0);
-	line = function_name(fd, buf, backup);
+	line = read_line(fd, buf, backup);
 	free(buf);
-	buf = NULL;
 	if (!line)
 		return (NULL);
 	backup = extract(line);
