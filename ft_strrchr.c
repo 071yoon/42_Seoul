@@ -10,27 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *str, int c)
 {
-	int		len;
-	char	*pointer;
+	const char	*last;
+	int			i;
 
-	pointer = (char *)str;
-	len = 0;
-	while (*pointer != '\0')
+	i = 0;
+	last = 0;
+	while (str[i] != '\0')
 	{
-		pointer++;
-		len++;
+		if (str[i] == (char)c)
+			last = &str[i];
+		i++;
 	}
-	while (len >= 0)
-	{
-		if (*pointer == c)
-			return (pointer);
-		else
-		{
-			pointer--;
-			len--;
-		}
-	}
-	return (0);
+	if (c == 0)
+		return ((char *)&str[i]);
+	return ((char *)last);
 }
