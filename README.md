@@ -1,8 +1,9 @@
-![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=Libft%20&fontSize=80)
-
 # <span><img src="https://softcom.pro/wp-content/uploads/2021/07/logo-ecole-42.jpg" width=100 height=100>
 
 notion으로 실행 시 더 보기 수월하다
+    
+    
+<img width="281" alt="image" src="https://user-images.githubusercontent.com/66371206/146854095-d0ad8ccd-7b75-4fce-987b-5663a3a12795.png">
 
 [링크](https://www.notion.so/Libft-78424b63f7474eb1a3eca83170f11e48)
 
