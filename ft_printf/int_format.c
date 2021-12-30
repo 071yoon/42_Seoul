@@ -6,7 +6,7 @@
 /*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 16:35:03 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/12/30 18:29:12 by 071yoon          ###   ########.fr       */
+/*   Updated: 2021/12/30 18:40:27 by 071yoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	int_form(va_list *ap)
 	ret = 0;
 	if (arg_int == 0)
 		ret += 1;
-	else if (arg_int < 0){
+	else if (arg_int < 0)
+	{
 		arg_int *= -1;
 		ret += 1;
 	}
@@ -44,7 +45,8 @@ int	uns_int_form(va_list *ap)
 	ret = 0;
 	if (arg_int == 0)
 		ret += 1;
-	else if (arg_int < 0){
+	else if (arg_int < 0)
+	{
 		arg_int *= -1;
 		ret += 1;
 	}
