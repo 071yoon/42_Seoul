@@ -1,39 +1,50 @@
-NAME 		=	libftprintf.a
-FLAGS 		=	-Wall -Wextra -Werror
-SRC 		=	ft_printf.c \
-				char_format.c \
-				hex_format.c \
-				int_format.c \
-				ptr_format.c \
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: yeoyoon <yeoyoon@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/01/03 14:47:14 by yeoyoon           #+#    #+#              #
+#    Updated: 2022/01/03 14:51:48 by yeoyoon          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-OBJ			=	$(SRC:.c=.o)
-INC_LINK	=	-I./includes
-LIBFT		=	-L./Libft -lft
+LIBFT 	= ./libft/libft.a
+
+NAME	= libftprintf.a
+
+SRCS	= 	ft_printf.c \
+			char_format.c \
+			hex_format.c \
+			int_format.c \
+			ptr_format.c \
+
+OBJS	= $(SRCS:.c=.o)
+
+CC		= gcc
+AR		= ar crs
+RM		= rm -f
+CFLAGS	= -Wall -Wextra -Werror
+
+.c.o:		$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+
+all:		$(NAME)
+
+$(NAME):	$(OBJS)
+			$(MAKE) -C ./libft
+			cp libft/libft.a $(NAME)
+			$(AR) $(NAME) $(OBJS)
 
 
-FILES		=	ft_strlen \
-				ft_strlcpy \
+clean:
+		$(MAKE) clean -C ./libft
+		$(RM) $(OBJS)
 
-all : $(NAME)
+fclean: clean
+		$(MAKE) fclean -C ./libft
+		$(RM) $(NAME)
 
-$(NAME) : $(OBJ) libft
-	cp Libft/libft.a ./$(NAME)
-	ar rsc $(NAME) $(OBJ)
+re: fclean all
 
-%.o: %.c
-	gcc $(FLAGS) $(INC_LINK) -c $< -o $(<:.c=.o)
-
-# libft compile
-libft :
-	@$(MAKE) -C ./Libft all
-
-clean :
-	@$(MAKE) -C ./Libft clean
-	@rm -rf $(OBJ)
-fclean : clean
-	@$(MAKE) -C ./Libft fclean
-	@rm -rf $(NAME)
-
-re : fclean all
-
-.PHONY: all clean fclean re libft
+.PHONY: all, bonus, clean, fclean, re

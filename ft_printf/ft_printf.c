@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yeoyoon <yeoyoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 14:39:44 by yeoyoon           #+#    #+#             */
-/*   Updated: 2021/12/29 16:43:51 by 071yoon          ###   ########.fr       */
+/*   Updated: 2022/01/03 16:26:52 by yeoyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "./libft/libft.h"
 
 int	ft_printf(const char *str, ...)
 {
@@ -19,6 +18,8 @@ int	ft_printf(const char *str, ...)
 	int		ret;
 	int		i;
 
+	if (!str)
+		return (-1);
 	va_start(ap, str);
 	i = 0;
 	ret = 0;
@@ -54,12 +55,18 @@ int	deal_format(va_list *ap, char c)
 		ret = str_form(ap);
 	else if (c == 'p')
 		ret = ptr_form(ap);
-	else if (c == '%')
-	{
+	else
+		ret = other_form(c);
+	return (ret);
+}
+
+int	other_form(char c)
+{
+	if (c == '%')
 		write(1, "%", 1);
-		ret = 1;
-	}
+	else if (ft_isascii(c))
+		write(1, &c, 1);
 	else
 		return (0);
-	return (ret);
+	return (1);
 }

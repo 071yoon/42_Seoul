@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hex_format.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yeoyoon <yeoyoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/29 16:35:59 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/12/29 16:43:36 by 071yoon          ###   ########.fr       */
+/*   Created: 2021/12/29 16:35:59 by yeoyoon           #+#    #+#             */
+/*   Updated: 2022/01/03 15:22:26 by yeoyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	small_x_form(va_list *ap)
 	int				len;
 	unsigned int	arg_x;
 
-	arg_x = (unsigned int)va_arg(*ap, int);
-	len = ft_puthex_fd((unsigned int)arg_x, 0, 1);
+	arg_x = (unsigned int)va_arg(*ap, unsigned int);
+	len = ft_puthex_fd(arg_x, 0, 1);
 	return (len);
 }
 
@@ -27,8 +27,8 @@ int	big_x_form(va_list *ap)
 	int				len;
 	unsigned int	arg_x;
 
-	arg_x = (unsigned int)va_arg(*ap, int);
-	len = ft_puthex_fd((unsigned int)arg_x, 1, 1);
+	arg_x = (unsigned int)va_arg(*ap, unsigned int);
+	len = ft_puthex_fd(arg_x, 1, 1);
 	return (len);
 }
 

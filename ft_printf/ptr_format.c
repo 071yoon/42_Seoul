@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ptr_format.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yeoyoon <yeoyoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/29 16:36:51 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/12/29 16:54:44 by 071yoon          ###   ########.fr       */
+/*   Created: 2021/12/29 16:36:51 by yeoyoon           #+#    #+#             */
+/*   Updated: 2022/01/03 14:07:12 by yeoyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ptr_form(va_list *ap)
 	uintptr_t	ptr;
 
 	len = 0;
-	ptr = (uintptr_t)va_arg(*ap, void *);
+	ptr = (uintptr_t)va_arg(*ap, uintptr_t);
 	write(1, "0x", 2);
 	len += 2;
 	if (ptr == 0)

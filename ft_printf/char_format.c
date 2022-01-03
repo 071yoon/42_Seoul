@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   char_format.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: 071yoon <071yoon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yeoyoon <yeoyoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/29 16:36:26 by 071yoon           #+#    #+#             */
-/*   Updated: 2021/12/29 16:45:49 by 071yoon          ###   ########.fr       */
+/*   Created: 2021/12/29 16:36:26 by yeoyoon           #+#    #+#             */
+/*   Updated: 2022/01/03 15:23:14 by yeoyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	char_form(va_list *ap)
 {
-	int	arg_char;
-	int	ret;
+	char	arg_char;
+	int		ret;
 
 	arg_char = (char)va_arg(*ap, int);
 	write(1, &arg_char, 1);
