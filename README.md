@@ -9,5 +9,5 @@
  |:---:|:---:|:---:|:---:|:---:|:---:|
  |01|00|[**Libft**](https://github.com/071yoon/42_Seoul/tree/main/Libft)|C|Completed|[![yeoyoon](https://badge42.herokuapp.com/api/project/yeoyoon/Libft)](https://github.com/JaeSeoKim/badge42)|
  |02|01|[**get_next_line**](https://github.com/071yoon/42_Seoul/tree/main/get_next_line)|C|Completed|[![yeoyoon](https://badge42.herokuapp.com/api/project/yeoyoon/get_next_line)](https://github.com/JaeSeoKim/badge42)|
- |03|01|[**ft_printf**](https://github.com/071yoon/42_Seoul/tree/main/ft_printf)|C|Expected|[![yeoyoon](https://badge42.herokuapp.com/api/project/yeoyoon/ft_printf)](https://github.com/JaeSeoKim/badge42)|
- |04|01|[**Born2beroot**](https://github.com/071yoon/42_Seoul/tree/main/Born2beroot)|C|Expected|[![yeoyoon](https://badge42.herokuapp.com/api/project/yeoyoon/born2beroot)](https://github.com/JaeSeoKim/badge42)|
+ |03|01|[**ft_printf**](https://github.com/071yoon/42_Seoul/tree/main/ft_printf)|C|Completed|[![yeoyoon](https://badge42.herokuapp.com/api/project/yeoyoon/ft_printf)](https://github.com/JaeSeoKim/badge42)|
+ |04|01|[**Born2beroot**](https://github.com/071yoon/42_Seoul/tree/main/Born2beroot)|C|Expected|[![yeoyoon](https://badge42.herokuapp.com/api/project/yeoyoon/Born2beroot)](https://github.com/JaeSeoKim/badge42)|
