@@ -1,7 +1,7 @@
 
 notion으로 실행 시 더 보기 수월하다
 
-[링크](https://www.notion.so/Libft-78424b63f7474eb1a3eca83170f11e48)
+[링크](https://yeonggi.notion.site/Libft-78424b63f7474eb1a3eca83170f11e48)
 
 - Libc functions
     
